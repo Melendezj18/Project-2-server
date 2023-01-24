@@ -36,4 +36,4 @@ Version 3
 
  ## ERD
 
- (./assets/erd.jpg)
+ ![ERD](./assets/erd.jpg)
