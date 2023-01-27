@@ -6,7 +6,7 @@ const Team = require('../models/team')
 const { requireToken } = require('../config/auth')
 
 //create
-router.post('/players', requireToken, (req, res, next) => {
+router.post('/players', (req, res, next) => {
     const teamId = req.body.player.teamId
     const player = req.body.player
 

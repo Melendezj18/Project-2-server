@@ -7,7 +7,7 @@ const { requireToken } = require('../config/auth')
 const router = express.Router()
 
 //index
-router.get('/teams', requireToken, (req, res, next) => {
+router.get('/teams',requireToken, (req, res, next) => {
 	Team.find()
 		.then((team) => {
 			return team.map((team) => team)
@@ -24,7 +24,7 @@ router.get('/teams/:id', requireToken, (req, res, next) => {
 })
 
 //create
-router.post('/teams', requireToken, (req, res, next) => {
+router.post('/teams',requireToken, (req, res, next) => {
 	Team.create(req.body.team)
 		.then((team) => {
 			res.status(201).json({ team: team })
