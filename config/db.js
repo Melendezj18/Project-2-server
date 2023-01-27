@@ -1,6 +1,7 @@
 const mongooseBaseName = 'soccer-team-tracker'
 
-const database = {
+const database = 
+{
 	development: `mongodb://localhost/${mongooseBaseName}-development`,
 	test: `mongodb://localhost/${mongooseBaseName}-test`,
 }

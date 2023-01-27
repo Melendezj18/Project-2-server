@@ -26,11 +26,8 @@ const requireToken = passport.authenticate('jwt', { session: false })
 
 const createUserToken = (req, user) => {
     console.log(req.body)
-	if (
-		!user ||
-		!req.body.credentials.password ||
-		!bcrypt.compareSync(req.body.credentials.password, user.password)
-	) {
+	if (!user || !req.body.credentials.password || !bcrypt.compareSync(req.body.credentials.password, user.password)) 
+    {
 		const err = new Error('The provided username or password is incorrect')
 		err.statusCode = 422
 		throw err
