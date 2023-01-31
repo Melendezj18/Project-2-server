@@ -1,13 +1,14 @@
 const express = require('express')
 const bcrypt = require('bcrypt')
-const router = express.Router()
 const User = require('../models/user')
 const { createUserToken } = require('../config/auth')
+const router = express.Router()
 
 
 router.post('/sign-up', (req, res, next) => {
+	console.log(req.body)
 	bcrypt
-		.hash(req.body.credential.password, 10)
+		.hash(req.body.credentials.password, 10)
         .then((hash) =>({
 				email: req.body.credentials.email,
 				password: hash,
