@@ -7,5 +7,23 @@
     "mongoose": "^6.8.4",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "soccer-team-tracker",
+  "description": "# Soccer Team Tracker",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melendezj18/Project-2-server.git"
+  },
+  "author": "Jose Melendez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melendezj18/Project-2-server/issues"
+  },
+  "homepage": "https://github.com/Melendezj18/Project-2-server#readme"
 }

@@ -8,11 +8,11 @@ const { createUserToken } = require('../config/auth')
 router.post('/sign-up', (req, res, next) => {
 	bcrypt
 		.hash(req.body.credential.password, 10)
-            .then((hash) =>({
-                    email: req.body.credentials.email,
-                    password: hash,
-                })
-            )
+        .then((hash) =>({
+				email: req.body.credentials.email,
+				password: hash,
+			})
+		)
 		.then((user) => User.create(user))
 		.then((user) => res.status(201).json(user))
 		.catch(next)
