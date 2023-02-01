@@ -36,7 +36,7 @@ router.get("/players/:playerId", (req, res, next) => {
 //index
 router.get('/players', (req, res, next) => {
     const teamId = req.body.player.teamId
-    Team.findById(teamId)
+    Team.find(teamId)
       .then(team => {
         res.status(200).json({ players: team.players })
       })
