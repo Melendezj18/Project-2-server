@@ -7,12 +7,12 @@ const { requireToken } = require('../config/auth')
 const router = express.Router()
 
 //index
-router.get('/teams',requireToken, (req, res, next) => {
+router.get('/teams', (req, res, next) => {
 	Team.find()
-		.then((team) => {
-			return team.map((team) => team)
+		.then((teams) => {
+			return teams.map((team) => team)
 		})
-		.then((team) => res.status(200).json({ team: team }))
+		.then((teams) => res.status(200).json({ teams: teams }))
 		.catch(next)
 })
 
@@ -37,6 +37,16 @@ router.patch('/teams/:id', requireToken, (req, res, next) => {
 	Team.findById(req.params.id)
 		.then((team) => {
 			return team.updateOne(req.body.team)
+		})
+		.then(() => res.sendStatus(204))
+		.catch(next)
+})
+
+//delete
+router.delete('/teams/:id', requireToken, (req, res, next) => {
+	Team.findById(req.params.id)
+		.then((team) => {
+			team.deleteOne()
 		})
 		.then(() => res.sendStatus(204))
 		.catch(next)
